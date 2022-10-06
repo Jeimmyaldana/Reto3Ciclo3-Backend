@@ -67,7 +67,7 @@
                                 <archive>
                                     <manifest>
                                         <addClasspath>true</addClasspath>
-                                        <mainClass>com.reto3.mintic.Reto3Application</mainClass>
+                                        <mainClass>mintic.sergio.reto3ciclo3.Reto3ciclo3Application</mainClass>
                                     </manifest>
                                 </archive>
                             </configuration>
