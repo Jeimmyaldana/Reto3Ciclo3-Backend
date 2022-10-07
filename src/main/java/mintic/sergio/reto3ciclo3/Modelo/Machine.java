@@ -21,7 +21,7 @@ public class Machine {
      private String name;
      private String brand;
      @Column(name="years")
-     private Integer year;
+     private Integer yea;
      private String description;
 
     @ManyToOne
