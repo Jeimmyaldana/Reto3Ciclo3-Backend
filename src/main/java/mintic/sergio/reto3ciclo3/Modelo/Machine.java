@@ -6,15 +6,7 @@ package mintic.sergio.reto3ciclo3.Modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
@@ -28,7 +20,8 @@ public class Machine {
      private Integer id;
      private String name;
      private String brand;
-     private Integer year_mach;
+     @Column(name="years")
+     private Integer year;
      private String description;
 
     @ManyToOne
@@ -69,12 +62,12 @@ public class Machine {
         this.brand = brand;
     }
 
-    public Integer getYear_mach() {
-        return year_mach;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setYear_mach(Integer year_mach) {
-        this.year_mach = year_mach;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getDescription() {
