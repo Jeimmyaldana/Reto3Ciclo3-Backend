@@ -8,6 +8,8 @@ import mintic.sergio.reto3ciclo3.Modelo.Reservation;
 import mintic.sergio.reto3ciclo3.Servicio.ReservationServicio;
 import java.util.List;
 import java.util.Optional;
+import mintic.sergio.reto3ciclo3.Repositorio.CountClient;
+import mintic.sergio.reto3ciclo3.Servicio.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -58,4 +60,21 @@ public class ReservationControlador {
     public boolean delete(@PathVariable("id") int reservationId){
         return reservationService.deleteReservation(reservationId);
     }
+    
+    @GetMapping("/report-clients")
+    public List<CountClient> getReservationsReportClient(){
+        return reservationService.getTopClients();
+    }
+    
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservationsReportDates(@PathVariable("dateOne") String dateOne,@PathVariable("dateTwo") String dateTwo){
+        return reservationService.informePeriodoTiempoReservas(dateOne,dateTwo);
+    }
+    
+    @GetMapping("/report-status")
+    public Status getReservationsStatusReport(){
+        return reservationService.getReservationStatusReport();
+    }
+    
+    
 }
